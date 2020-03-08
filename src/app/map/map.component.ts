@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MapService } from '../map.service';
 
 @Component({
   selector: 'app-map',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  location: object;
+
+  constructor( private _mapHttp: MapService) { }
 
   ngOnInit(): void {
+    this._mapHttp.getMapCoordinates().subscribe( data => {
+      this.location = data;
+      console.log(this.location);
+    });
   }
 
 }
