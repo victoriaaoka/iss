@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { PeopleComponent } from './people/people.component';
 import { PasstimesComponent } from './passtimes/passtimes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PasstimesComponent } from './passtimes/passtimes.component';
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCiGORHHwC-nipQwPDjhBxS24t19coSSj0'
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
